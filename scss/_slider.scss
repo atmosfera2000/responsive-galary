@@ -1,0 +1,45 @@
+$slides: arka, brazil, france, road, temza;
+$slider-width: 1200px;
+$slider-height: 500px;
+$item-basis-size: 25%;
+$item-active-size: 100%;
+$mobile-max-width: 768px;
+
+.slider {
+    display: flex;
+    width: $slider-width;
+    height: $slider-height;
+
+    .item {
+        flex-basis: $item-basis-size;
+        transition: flex-basis .5s ease;
+
+        &:hover {
+            flex-basis: $item-active-size;
+            cursor: pointer;
+        }
+
+        $i: 1;
+        @each $slide in $slides {
+            &:nth-child(#{$i}) {
+                background-image: url(../img/#{$slide}.jpg);
+                background-size: cover;
+            }
+            $i: $i + 1;
+        }
+    }
+
+    .touch {
+        flex-basis: $item-active-size;            
+    }
+}
+
+@media (max-width: $mobile-max-width) {
+    .slider {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+
