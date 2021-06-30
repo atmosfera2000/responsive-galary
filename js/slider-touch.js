@@ -5,11 +5,20 @@
 */
 
 // CSS classes
-const sliderClass = 'slider';
-const itemClass = 'item';
-const touchClass = 'touch';
+const sliderClass   = 'slider';
+const itemClass     = 'item';
+const touchClass    = 'touch';
+const isHidden      = 'is-hidden';
+const isNone        = 'is-none';
 
+// Elements
 const slider = document.querySelector(`.${sliderClass}`);
+const loading = document.getElementById("loading");
+
+window.onload = function() {    
+    slider.classList.remove(isHidden);
+    loading.classList.add(isNone);
+};
 
 slider.addEventListener('touchstart', event => useTouch(event));
 
@@ -29,6 +38,8 @@ function useTouch(event) {
         selected.classList.add(touchClass);
     }    
 }
+
+
 
 
     
