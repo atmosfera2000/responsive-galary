@@ -34,14 +34,6 @@ $mobile-max-width: 768px;
     }
 }
 
-.is-hidden {
-    opacity: 0;
-}
-
-.is-none {
-    display: none;
-}
-
 @media (max-width: $mobile-max-width) {
     .slider {
         flex-direction: column;
